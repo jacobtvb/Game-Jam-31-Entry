@@ -3,7 +3,7 @@
 hs = 0;
 vs = 0;
 acc = 0.15;
-wacc = 0.05;
+wacc = 0.09;
 ws = 0;
 wvs = 0;
 mxws = 4.5;
@@ -16,12 +16,14 @@ restrict = 0;
 
 jumps = 1;
 maxJumps = 1;
-js = -11;
+js = -12.5;
 fs = 0.65
 
-fsW = 0.3
+fsW = 0.1
 
-wDist = 20;
+wDist = 40;
+
+state = "ground";
 
 // Visual Variables 
 
