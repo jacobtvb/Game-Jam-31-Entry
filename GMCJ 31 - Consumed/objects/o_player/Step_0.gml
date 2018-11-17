@@ -16,35 +16,73 @@ if (place_meeting(x,y-30,o_water)) {
 }
 else { state = "ground"; image_blend = c_white;  }
 
-if state = "ground" {
-	
-var moveHor = k_r - k_l;
-if restrict = 0 then hs = xscale * ws;
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  GROUND STATE
 
-if !(moveHor = 0) { ws += acc; } else ws -= acc*2;
-if abs(ws) > mxws then ws = mxws;
-if ws < 0 then ws = 0;
+if state = "ground" {
+	var moveHor = k_r - k_l;
+	if restrict = 0 then hs += xscale * acc;
+
+	if moveHor = 0
+		{
+		if !(place_meeting(x,y+1,o_block))
+			{
+			if hs > 0 then hs -= acc;	
+			if hs < 0 then hs += acc;	
+			if hs < acc*3 and hs > -acc*3 then hs = 0;
+			}
+		if (place_meeting(x,y+1,o_block))
+			{
+			if hs > 0 then hs -= acc*3;	
+			if hs < 0 then hs += acc*3;	
+			if hs < acc*3 and hs > -acc*3 then hs = 0;
+			}
+		}
+		else if (place_meeting(x,y+1,o_block))
+			{
+			if hs > mxws+acc then hs -= acc*3;	
+			if hs < -mxws-acc then hs += acc*3;	
+		}
+			else if !(place_meeting(x,y+1,o_block))
+			{
+			if hs > mxws+acc then hs -= acc;	
+			if hs < -mxws-acc then hs += acc;	
+		}
+
+	ws = abs(hs);
 
 // Gravity
 
-vs += fs;
-if vs > mxfs then vs = mxfs
+	vs += fs;
+	if vs > mxfs then vs = mxfs
+	
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GROUND STATE VISUALS
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~ VISUALS
-
-if place_meeting(x,y+2,o_block) {
-	if moveHor != 0 and ws > 1 then {
-		sprite_index = s_plyRun; image_speed = ws*0.3;
+	if place_meeting(x,y+2,o_block) {
+		if moveHor != 0 and ws > 1 then {
+			sprite_index = s_plyRun; image_speed = ws*0.3;
+		}
+		else sprite_index = s_plyIdle; image_speed = 1;
 	}
-	else sprite_index = s_plyIdle
+	
+	if !place_meeting(x,y+2,o_block) and vs < -1 then sprite_index = s_plyJump;
+	if !place_meeting(x,y+2,o_block) and vs > -1 then sprite_index = s_plyFall;	
+	
+//Wall Jump
+	if canWallJump {
+		if (collision_point(x+xscale*12,y-22,o_block,1,1)) and vs > 0 and !(place_meeting(x,y+2,o_block)) {
+			sprite_index = s_plyCling;
+			vs += fs*0.1;
+			if vs > 2 then vs = 2
+	
+			if k_jump {
+				vs = js;
+				hs = mxws*1.5*-xscale
+			}
+		}
+	}
 }
 
-if !place_meeting(x,y+2,o_block) and vs < -1 then sprite_index = s_plyJump;
-if !place_meeting(x,y+2,o_block) and vs > -1 then sprite_index = s_plyFall
-
-}
-
-// Water State
+/*/ Water State
 
 if state = "water" {
 	
@@ -77,12 +115,13 @@ if vs > fsW then vs = lerp(vs,fsW,0.15)
 jumps = 1;
 
 }
+*/
 
 // Jumping
 	
 if jumps > 0 and !(place_meeting(x,y-60,o_water)) {
 	if k_jump {
-	wvs = 0;
+	ws = 0;
 	vs = js	
 	yscale = 1.5;
 	jumps -= 1;
@@ -91,7 +130,7 @@ if jumps > 0 and !(place_meeting(x,y-60,o_water)) {
 
 // Universal Visual Effects
 
-if yscale != 1 then yscale = lerp(yscale,1,0.1)
+if yscale != 1 then yscale = lerp(yscale,1,0.05)
 if moveHor = 1 then xscale = 1 else if moveHor = -1 then xscale = -1;
 
 // Horizontal Collisions
@@ -107,20 +146,8 @@ x = x + hs;
 
 // Vertical Collisions
 
-// Wall Jump
-/*if (place_meeting(x+xscale*2,y,o_block)) and vs > 0 {
-	sprite_index = s_plyCling;
-	vs += fs*0.1;
-	if vs > 7 then vs = 7
-	
-	if k_jump
-		{
-		vs = js;
-		hs = mxws*xscale
-		}*/
-
 if (place_meeting(x,y+vs,o_block)) {
-	if vs > fs and state="ground" then { yscale = 0.5; jumps = maxJumps; ws *= 0.75 }
+	if vs > fs and state="ground" then { jumps = maxJumps; ws *= 0.75 }
 	while (!place_meeting(x,y+sign(vs),o_block)) {
 		y = y + sign(vs);
 	}

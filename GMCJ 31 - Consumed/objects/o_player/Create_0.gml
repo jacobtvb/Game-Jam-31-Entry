@@ -2,7 +2,7 @@
 
 hs = 0;
 vs = 0;
-acc = 0.15;
+acc = 0.45;
 wacc = 0.09;
 ws = 0;
 wvs = 0;
@@ -30,3 +30,7 @@ state = "ground";
 xscale = 1;
 yscale = 1;
 rot = 0;
+
+// Powerups
+
+canWallJump = 0;
