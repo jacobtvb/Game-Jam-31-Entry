@@ -34,3 +34,6 @@ rot = 0;
 // Powerups
 
 canWallJump = 0;
+
+feed = 1000;
+maxFeed = 1000;

@@ -1,3 +1,9 @@
+// temporary measure to get upgrades right away
+maxJumps = 1 + gamestate_flag_get("powerups", "doubleJump");
+canWallJump = gamestate_flag_get("powerups", "wallJump");
+
+feed--;
+
 /// Controls
 
 k_l = keyboard_check(vk_left);
