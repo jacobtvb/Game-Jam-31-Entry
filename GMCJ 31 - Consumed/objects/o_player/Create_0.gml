@@ -18,7 +18,7 @@ jumps = 1;
 maxJumps = 1;
 canRoll = 1;
 canStomp  = 1;
-js = -12.5;
+js = -13.5;
 fs = 0.65
 
 fsW = 0.1

@@ -791,6 +791,14 @@
             }
         },
         {
+            "Key": "f26e18b0-5eea-46ec-8bad-026907ed1786",
+            "Value": {
+                "id": "eaa4d262-27c9-49d2-a370-044ba4964a94",
+                "resourcePath": "rooms\\rm_mursa1\\rm_mursa1.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "f40ec624-83e5-41eb-afe6-8a8ac786c018",
             "Value": {
                 "id": "ae7dc68f-7915-4547-aa7b-16d26d898ebf",
