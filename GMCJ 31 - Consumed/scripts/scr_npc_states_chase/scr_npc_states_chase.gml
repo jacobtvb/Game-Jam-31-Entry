@@ -16,7 +16,7 @@ if(path_get_number(pathId) > 1){
 			face = FACE_LEFT;	
 		}
 		if(target != noone && point_distance(x,y,target.x,target.y) > attackDistance){
-			var _a = face*0.25;
+			var _a = face*acceleration;
 			xSpeed = clamp(xSpeed + _a, -runSpeed, runSpeed);
 			//edge case where npc is caught on a corner
 			if(place_meeting(x + xSpeed, y, o_block) && !place_meeting(x + xSpeed, y - 5, o_block)){ 
@@ -26,19 +26,19 @@ if(path_get_number(pathId) > 1){
 	}
 	else if(_originY > _y){ //wall climb up
 		applyGravity = false;
-		var _a = 0.25;
+		var _a = acceleration;
 		ySpeed = clamp(ySpeed - _a, -runSpeed, 0);
 	}
 	else if(_originY < _y){ //wall climb down
 		applyGravity = false;
-		var _a = 0.25;
+		var _a = acceleration;
 		ySpeed = clamp(ySpeed + _a, 0, runSpeed);
 	}
 	
 }
 
 if(target != noone && point_distance(x, y, target.x, target.y) < attackDistance){
-	var _dA = -face*0.5;
+	var _dA = -face*acceleration*2;
 	xSpeed += _dA;
 	if(abs(xSpeed) < 0.6){
 		xSpeed = 0;	

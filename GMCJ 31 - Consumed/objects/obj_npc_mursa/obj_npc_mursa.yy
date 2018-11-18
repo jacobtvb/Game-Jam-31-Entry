@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_npc_mursa",
     "eventList": [
-        
+        {
+            "id": "3757a8a0-1de6-47bd-9364-212aaf278a8f",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "b25d71d6-2edb-4c94-9255-2b5f101d1932"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
