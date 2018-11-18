@@ -4,3 +4,5 @@ enum Direction {
     LEFT,
     DOWN,
 }
+
+#macro GRAVITY 0.65;

@@ -1,5 +1,10 @@
 /// Definitions
 
+global.roomGridId = noone;
+global.controls = self;
+
+gridScheduleTimer = 0;
+
 gamestate = json_load("gamestate.json");
 
 /*

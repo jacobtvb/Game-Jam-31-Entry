@@ -1,8 +1,8 @@
 {
-    "id": "6160f266-a555-49ff-a3e9-b714b60dee15",
+    "id": "73532c93-b738-4d17-a67a-06c461597abb",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "CONST",
+    "name": "scr_npc_grid_create",
     "IsCompatibility": false,
     "IsDnD": false
 }

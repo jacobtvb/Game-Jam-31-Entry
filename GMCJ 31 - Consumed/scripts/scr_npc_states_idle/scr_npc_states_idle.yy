@@ -1,8 +1,8 @@
 {
-    "id": "6160f266-a555-49ff-a3e9-b714b60dee15",
+    "id": "fc78f959-15b9-44b8-8b78-9c939e409ba9",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "CONST",
+    "name": "scr_npc_states_idle",
     "IsCompatibility": false,
     "IsDnD": false
 }
