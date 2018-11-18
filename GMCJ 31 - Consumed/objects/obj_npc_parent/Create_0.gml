@@ -10,3 +10,8 @@ ySpeed = 0;
 possibleEnemies[0] = o_player;
 pathId = path_add();
 target = noone;
+face = FACE_RIGHT;
+runSpeed = 5;
+attackDistance = 50;
+
+applyGravity = true;

@@ -1,5 +1,5 @@
 
-draw_self();
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale*face, image_yscale, image_angle, c_white, 1.0);
 
 draw_set_color(c_blue);
 draw_set_alpha(1.0);
