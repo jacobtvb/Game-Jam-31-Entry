@@ -33,3 +33,11 @@ else {
     }
     instance_create_layer(0, 0, "Instances", obj_gui);
 }
+// ------------
+// MP GRID
+// ------------
+
+globalvar grid;
+
+grid = mp_grid_create(0,0,room_width/32,room_height/32,32,32);
+mp_grid_add_instances(grid, o_block, false)

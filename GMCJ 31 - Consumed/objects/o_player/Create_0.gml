@@ -16,6 +16,8 @@ restrict = 0;
 
 jumps = 1;
 maxJumps = 1;
+canRoll = 1;
+canStomp  = 1;
 js = -12.5;
 fs = 0.65
 
@@ -35,5 +37,6 @@ rot = 0;
 
 canWallJump = 0;
 
-feed = 1000;
-maxFeed = 1000;
+feed = 5;
+maxFeed = 5;
+alarm[0] = 60;

@@ -1,5 +1,5 @@
 opacity = 0;
-timerLength = 10; // In seconds
+timerLength = 300; // In seconds
 //timerLength *= 60;
 
 sprite_index = s_timer;
