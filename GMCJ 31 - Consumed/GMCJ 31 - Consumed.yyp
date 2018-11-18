@@ -303,6 +303,14 @@
             }
         },
         {
+            "Key": "598711a9-9fb3-4921-92d6-6843a3648b76",
+            "Value": {
+                "id": "c99bd956-2b44-4dd2-a144-d906f3309b6a",
+                "resourcePath": "views\\598711a9-9fb3-4921-92d6-6843a3648b76.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "59ddeba7-4d83-4322-925b-e67115ce8341",
             "Value": {
                 "id": "8bbb3caf-fc8a-4abc-9815-994952e8b3fc",
@@ -911,6 +919,14 @@
             }
         },
         {
+            "Key": "ef0e57f7-005e-4a9e-846d-78cdb914f5bb",
+            "Value": {
+                "id": "ac75487a-d63f-4aad-8006-ec264473a88e",
+                "resourcePath": "scripts\\scr_npc_destination_mursa\\scr_npc_destination_mursa.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f26e18b0-5eea-46ec-8bad-026907ed1786",
             "Value": {
                 "id": "eaa4d262-27c9-49d2-a370-044ba4964a94",
@@ -1015,7 +1031,8 @@
         "df0cdc7d-26d8-4aa1-891e-e8adf25953f6",
         "3a867024-c386-441e-9e68-83a7d10a95aa",
         "73532c93-b738-4d17-a67a-06c461597abb",
-        "cc3f7810-825c-4979-bf5f-a06345b2cd7d"
+        "cc3f7810-825c-4979-bf5f-a06345b2cd7d",
+        "ef0e57f7-005e-4a9e-846d-78cdb914f5bb"
     ],
     "tutorial": ""
 }
