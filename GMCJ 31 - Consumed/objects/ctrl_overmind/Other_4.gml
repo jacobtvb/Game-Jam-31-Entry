@@ -1,4 +1,5 @@
 show_debug_message(room_get_name(room));
+room_ingame = false;
 
 // ---------
 // INIT ROOM
@@ -12,6 +13,7 @@ if (room == rm_init) {
 // INGAME ROOMS
 // ------------
 else {
+    room_ingame = true;
     var _spawn_point = gamestate_get("spawn_point");
     var _xoffset = gamestate_get("spawn_xoffset");
     var _yoffset = gamestate_get("spawn_yoffset");
@@ -31,7 +33,7 @@ else {
     with (instance_create_layer(_xoffset, _yoffset, "Instances", o_player)) {
         feed = gamestate_get("player_feed");
     }
-    instance_create_layer(0, 0, "Instances", obj_gui);
+    instance_create_layer(0, 0, "Controls", obj_gui);
 }
 // ------------
 // MP GRID

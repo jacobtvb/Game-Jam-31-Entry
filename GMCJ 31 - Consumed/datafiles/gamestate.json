@@ -1,9 +1,11 @@
 {
     "spawn_room": "rm_start",
     "spawn_point": "lonely_hole",
-    "spawn_xoffset": 1,
-    "spawn_yoffset": 12,
-    "checkpoint": null,
+    "spawn_xoffset": 64,
+    "spawn_yoffset": 0,
+    
+    "player_feed": 1000,
+    
     "flags": {
         "powerups": []
     }
