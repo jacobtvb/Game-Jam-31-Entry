@@ -1,0 +1,3 @@
+// variables declaration
+parent = noone;
+

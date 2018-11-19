@@ -5,7 +5,7 @@ show_debug_message(room_get_name(room));
 // ---------
 if (room == rm_init) {
     gamestate_set("player_feed", 1000);
-    navigation_set(rm_start, "lonely_hole", 0, 0);
+    navigation_set(rm_start, "lonely_hole", 64, 0);
     navigation_do();
 }
 // ------------
