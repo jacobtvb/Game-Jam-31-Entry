@@ -2,6 +2,7 @@
 
 global.roomGridId = noone;
 global.controls = self;
+global.roomFloatGridId = noone;
 
 gridScheduleTimer = 0;
 

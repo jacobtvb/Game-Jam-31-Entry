@@ -1,7 +1,7 @@
 
 script_execute(state);
 
-if(applyGravity){
+if(!floats && applyGravity){
 	ySpeed += GRAVITY;
 }
 

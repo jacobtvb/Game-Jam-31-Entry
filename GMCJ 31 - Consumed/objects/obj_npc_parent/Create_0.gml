@@ -7,7 +7,7 @@ desiredY = noone;
 xSpeed = 0;
 ySpeed = 0;
 
-possibleEnemies[0] = o_player;
+possibleEnemies = noone;
 pathId = path_add();
 target = noone;
 face = FACE_RIGHT;
@@ -17,3 +17,4 @@ applyGravity = true;
 
 acceleration = 0.25;
 runSpeed = 5;
+floats = false;

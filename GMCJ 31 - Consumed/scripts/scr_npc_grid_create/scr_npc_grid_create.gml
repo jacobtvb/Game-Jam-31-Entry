@@ -2,12 +2,17 @@
 if(global.roomGridId != noone){
 	mp_grid_destroy(global.roomGridId);	
 }
+if(global.roomFloatGridId != noone){
+	mp_grid_destroy(global.roomFloatGridId);	
+}
 
 var _blockSize = 64;
 var _width = room_width div _blockSize;
 var _height = room_height div _blockSize;
 
 global.roomGridId = mp_grid_create(0, 0, _width, _height, _blockSize, _blockSize);
+global.roomFloatGridId = mp_grid_create(0, 0, _width, _height, _blockSize, _blockSize);
+mp_grid_add_instances(global.roomFloatGridId, o_block, false);
 
 var _gridId = global.roomGridId;
 

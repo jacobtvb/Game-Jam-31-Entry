@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "1e515a58-36a8-48ed-9d1d-ec8bfc439a4d",
+            "Value": {
+                "id": "9aef21ba-9077-4d91-805b-3a1d84116bcd",
+                "resourcePath": "sprites\\spr_float_npc_placeholder\\spr_float_npc_placeholder.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1f0c847f-af5e-46e4-8ee2-2f583837bfe9",
             "Value": {
                 "id": "6590879c-4cfd-4f3f-a901-4e3f526a2480",
@@ -191,6 +199,14 @@
             }
         },
         {
+            "Key": "3216bf3f-8da5-4c55-81fb-a2667f6c1ff4",
+            "Value": {
+                "id": "ad9da6bf-0993-4e83-b1dc-4e4d42da26b6",
+                "resourcePath": "objects\\obj_npc_float_parent\\obj_npc_float_parent.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "32319c32-ad34-490f-a2e9-aed0f485d5ce",
             "Value": {
                 "id": "1e161d51-80cc-4a29-aec9-0291e00dd8cc",
@@ -204,6 +220,14 @@
                 "id": "cf43d32a-675a-4963-90ae-7ed4b58db5d1",
                 "resourcePath": "datafiles_yy\\gamestate.json.yy",
                 "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "33a2c05b-73f1-4a21-b702-ff2992286ce8",
+            "Value": {
+                "id": "6e7a9db7-558a-4761-9e39-c7b9570cb16f",
+                "resourcePath": "objects\\obj_npc_float_placeholder\\obj_npc_float_placeholder.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -639,6 +663,14 @@
             }
         },
         {
+            "Key": "a8e7e576-cec5-404a-84ac-365a81364280",
+            "Value": {
+                "id": "05d5dd62-43bf-4ae9-b242-c41838b15f3b",
+                "resourcePath": "scripts\\scr_npc_get_cieling_y\\scr_npc_get_cieling_y.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "8d3e4290-4e88-4e06-b280-3c9726c7dc1b",
@@ -812,6 +844,14 @@
                 "id": "23ccd10e-47af-41de-8685-cdc8160cd7bb",
                 "resourcePath": "objects\\o_mursa\\o_mursa.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "da363ebe-d0a0-4f41-896f-0adea9b6b58e",
+            "Value": {
+                "id": "e455047f-09f0-46de-b30b-14bc22317ed5",
+                "resourcePath": "scripts\\scr_npc_states_float_chase\\scr_npc_states_float_chase.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1026,10 +1066,12 @@
         "260012b2-2045-4b9b-841c-d6d1267d4571",
         "fc78f959-15b9-44b8-8b78-9c939e409ba9",
         "dc843876-33fe-40d2-a367-8d7f794a36b4",
+        "da363ebe-d0a0-4f41-896f-0adea9b6b58e",
         "20cf3771-88c0-402a-aae2-3df689fb19dc",
         "eab156d7-94ca-4b91-baf7-fa4c446eb44f",
         "df0cdc7d-26d8-4aa1-891e-e8adf25953f6",
         "3a867024-c386-441e-9e68-83a7d10a95aa",
+        "a8e7e576-cec5-404a-84ac-365a81364280",
         "73532c93-b738-4d17-a67a-06c461597abb",
         "cc3f7810-825c-4979-bf5f-a06345b2cd7d",
         "ef0e57f7-005e-4a9e-846d-78cdb914f5bb"
