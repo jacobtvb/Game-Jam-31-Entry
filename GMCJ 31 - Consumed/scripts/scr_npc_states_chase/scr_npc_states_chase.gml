@@ -1,6 +1,11 @@
 
-if(desiredX != noone){
+if(desiredX == noone){
 	target = scr_npc_get_closest_target();	
+}
+
+if(target == noone || !instance_exists(target)){
+	path_clear_points(pathId);
+	state = scr_npc_states_idle;
 }
 
 scr_npc_update_target_path();
@@ -9,10 +14,26 @@ applyGravity = true;
 var _totalPoints = path_get_number(pathId);
 
 if(_totalPoints > 1){
-	var _originY = path_get_point_y(pathId, 0);
-	var _y = path_get_point_y(pathId, 1);
-	//horizontal movement
-	if(abs(_originY - _y) < 32){
+	var _nextY = path_get_point_y(pathId, 1);
+	
+	var _horizontalMovement = false;
+	
+	if(abs(y - _nextY) < 32){
+		_horizontalMovement = true;
+	}
+	else if(y > _nextY && !place_meeting(x, y + clamp(ySpeed - acceleration, -runSpeed, 0), o_block)){ //wall climb up
+		applyGravity = false;
+		ySpeed = clamp(ySpeed - acceleration, -runSpeed, 0);
+	}
+	else if(y < _nextY && !place_meeting(x, y + clamp(ySpeed + acceleration, 0, runSpeed), o_block)){ //wall climb down
+		applyGravity = false;
+		ySpeed = clamp(ySpeed + acceleration, 0, runSpeed);
+	}
+	else{
+		_horizontalMovement = true;	
+	}
+	
+	if(_horizontalMovement){
 		var _x = path_get_point_x(pathId, 1);
 		if(_x > x){
 			face = FACE_RIGHT;
@@ -20,25 +41,12 @@ if(_totalPoints > 1){
 		else{
 			face = FACE_LEFT;	
 		}
-		var _a = face*acceleration;
-		xSpeed = clamp(xSpeed + _a, -runSpeed, runSpeed);
+		xSpeed = clamp(xSpeed + face*acceleration, -runSpeed, runSpeed);
 		//edge case where npc is caught on a corner
-		if(place_meeting(x + xSpeed, y, o_block) && !place_meeting(x + xSpeed, y - 5, o_block)){ 
-			ySpeed = -5;
+		if(place_meeting(x + xSpeed, y, o_block) && !place_meeting(x + xSpeed, y - 10, o_block)){ 
+			ySpeed = -10;
 		}
-		
 	}
-	else if(_originY > _y){ //wall climb up
-		applyGravity = false;
-		var _a = acceleration;
-		ySpeed = clamp(ySpeed - _a, -runSpeed, 0);
-	}
-	else if(_originY < _y){ //wall climb down
-		applyGravity = false;
-		var _a = acceleration;
-		ySpeed = clamp(ySpeed + _a, 0, runSpeed);
-	}
-	
 }
 
 
